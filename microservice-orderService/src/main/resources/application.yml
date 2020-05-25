@@ -1,0 +1,28 @@
+server:
+  port: 5000
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:3000/eureka #e单机ureka服务端提供的注册地址 参考服务端配置的这个路径
+      defaultZone: http://localhost:3001/eureka,http://localhost:3002/eureka,http://localhost:3003/eureka #eureka集群
+  instance:
+    instance-id: orderService-5000 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    leaseRenewalIntervalInSeconds: 30 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    leaseExpirationDurationInSeconds: 90 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
+spring:
+  application:
+    name: order-service #此实例注册到eureka服务端的name
+  sleuth:
+    sampler:
+      probability: 1.0 #Request采样的数据量。默认是0.1，也就是10%。表示将请求中的百分之多少记录下来。1.0表示全部。
+  zipkin:
+    base-url: http://localhost:8080 #zipkin-server的地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #将actuator监控的所有api都暴露出来

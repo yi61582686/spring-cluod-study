@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:3000/eureka # 单机eureka服务端提供的注册地址 参考服务端配置的这个路径
+      #defaultZone: http://localhost:3001/eureka # 只向集群中的一台eureka服务端注册
+      defaultZone: http://localhost:3001/eureka,http://localhost:3002/eureka,http://localhost:3003/eureka #eureka集群
+  instance:
+    instance-id: zuul-6000 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    leaseRenewalIntervalInSeconds: 10 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    leaseExpirationDurationInSeconds: 30 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
+spring:
+  application:
+    name: zuul #此实例注册到eureka服务端的name
+
+zuul:
+  prefix: /api #添加一个访问前缀
+  strip-prefix: true #zuul在路由请求时，是否去掉prefix前缀。默认去掉。
+  ignored-services: "*"
+  routes:
+    user:
+      serviceId: user-service
+#      url: http://localhost:4000
+      path: /user/**
+    order:
+      serviceId: order-service
+#      url: http://localhost:5000
+      path: /order/**
+
+
+

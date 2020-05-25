@@ -1,0 +1,10 @@
+###zipkin在2.7.x版本后，不再支持自己搭建服务，
+###需要使用官方的jar包跑服务。增加这个配置，可以自己搭建服务，可能会出问题。
+management:
+  metrics:
+    web:
+      server:
+        autoTimeRequests: false
+
+server:
+  port: 8080

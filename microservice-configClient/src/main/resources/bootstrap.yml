@@ -1,0 +1,25 @@
+### bootstrap.yml也是SpringBoot的配置文件，
+### 优先级接高于application.yml。且不能被替换，即不能被云端配置替换。
+### 使用配置中心时，需要通过bootstrap.yml来配置注册中心相关的信息。
+
+#server:
+ # port: 5700
+
+spring:
+  cloud:
+    config:
+      name: config-server #这是要读取的配置文件的名字，对应的规则是{application}
+      profile: dev #这是要获取的配置文件中的环境，对应的规则是{profile}。可以不配置profile，获取整个文件里的配置。
+      label: master #这是获取的git的分支，对应的是{label}
+      #uri: http://localhost:5600 #配置中心的服务地址。
+                                  #当需要从eureka中获取到配置中心的服务时，不再需要指出配置中心的uri
+      discovery: # 自动从注册中心获取到配置中心服务，uri和discovery配置一个就行。一般配置discovery。
+        enabled: true # 允许从注册中心自动获取到配置中心服务地址
+        service-id: config-server #注册中心中，配置中心服务的Application的名字
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:3000/eureka # 单机eureka服务端提供的注册地址 参考服务端配置的这个路径
+      #defaultZone: http://localhost:3001/eureka # 只向集群中的一台eureka服务端注册
+      defaultZone: http://localhost:3001/eureka,http://localhost:3002/eureka,http://localhost:3003/eureka #eureka集群

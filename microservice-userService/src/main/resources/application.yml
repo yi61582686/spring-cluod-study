@@ -1,0 +1,58 @@
+server:
+  port: 4000
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:3000/eureka # 单机eureka服务端提供的注册地址 参考服务端配置的这个路径
+      #defaultZone: http://localhost:3001/eureka # 只向集群中的一台eureka服务端注册
+      defaultZone: http://localhost:3001/eureka,http://localhost:3002/eureka,http://localhost:3003/eureka #eureka集群
+  instance:
+    instance-id: userService-4000 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    leaseRenewalIntervalInSeconds: 10 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    leaseExpirationDurationInSeconds: 30 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
+
+
+spring:
+  application:
+    name: user-service #此实例注册到eureka服务端的name
+  sleuth:
+    sampler:
+      probability: 1.0 #Request采样的数据量。默认是0.1，也就是10%。表示将请求中的百分之多少记录下来。1.0表示全部。
+  zipkin:
+    base-url: http://localhost:8080 #zipkin-server的地址
+
+#开启feign对hystrix的支持
+feign:
+  hystrix:
+    enabled: true #开启feign对hystrix的支持
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
+
+hystrix:
+  command:       #命令属性：属性的类型之一
+    default:     #作用域：声明以下所有的配置为默认的全局配置
+      execution:       #执行相关的属性
+        isolation:
+         thread:
+           timeoutInMilliseconds: 10000 #修改默认超时时间为3s
+      circuitBreaker:   #断路器相关的属性
+#        requestVolumeThreshold: 5  #一定窗口时间内(默认10秒)允许失败的次数(默认20次)，超过这个次数，断路器会自动打开，直接调用fallback回退方法
+#        sleepWindowInMilliseconds: 5000  #默认5s，断路器打开后，在该时间之后，设为半开状态，当有请求来时，去尝试请求一次服务，看是否正常，正常就关闭断路器。不正常继续开启断路器。如此往复，嗅探服务是否正常。
+
+  threadpool: #线程池属性，限流的配置。
+    default: #全局配置
+      coreSize: 10 #核心线程数,限流的配置。同时只能接受这么多请求。
+    order: #自定义配置，在@HystrixCommand注解的threadPoolKey属性中引用
+      coreSize: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #将actuator监控的所有api都暴露出来

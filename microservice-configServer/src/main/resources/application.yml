@@ -1,0 +1,33 @@
+server:
+  port: 5600
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:  #配置git仓库
+          uri: https://github.com/yi61582686/spring-cloud-config-server.git #git仓库云端地址
+          search-paths: foo,bar*,foo/bar #配置中心会在git仓库的根目录、foo子目录、以bar开头的子目录、以及foo子目录下的bar目录中寻找配置文件。
+                                 #可以配置"*"，表示所有目录，不建议这样使用。
+                                 #多级目录可以配置:foo/bar。
+          clone-on-start: false #配置中心启动时就克隆配仓库到本地。默认是在配置被首次请求时，才克隆配置到本地
+            #username: #如果是私有仓库，要填写用户名和密码。公有仓库不需要
+          #password: #密码
+          #native:
+            #search-loaction: classpath:/config #若配置中心在本地，配置本地地址
+
+#ConfigServer的高可用，将所有ConfigServer注册到eureka中。在ConfigClient从eureka服务中获取到ConfigServer的信息，自动拉去配置文件。
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:3000/eureka # 单机eureka服务端提供的注册地址 参考服务端配置的这个路径
+      #defaultZone: http://localhost:3001/eureka # 只向集群中的一台eureka服务端注册
+      defaultZone: http://localhost:3001/eureka,http://localhost:3002/eureka,http://localhost:3003/eureka #eureka集群
+  instance:
+    instance-id: configServer-5600 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    leaseRenewalIntervalInSeconds: 10 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    leaseExpirationDurationInSeconds: 30 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒

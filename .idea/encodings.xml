@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/microservice-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-configClient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-configClient/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-configServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-configServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-configServer5601/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-configServer5601/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer3001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer3001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer3002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer3002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer3003/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-eurekaServer3003/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-hystrixDashboard/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-hystrixDashboard/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-orderService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-orderService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-orderService5001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-orderService5001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-parent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-payment/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-payment/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-payment7001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-payment7001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-userService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-userService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-zipkinServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-zipkinServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-zuul/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-zuul/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

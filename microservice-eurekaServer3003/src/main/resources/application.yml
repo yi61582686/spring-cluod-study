@@ -1,0 +1,20 @@
+##eureka集群配置
+server:
+  port: 3003
+
+eureka:
+  server:  #eureka服务器配置，使当前eureka作为服务器使用的配置
+    enable-self-preservation: false  #关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 #设置清理间隔（单位：毫秒 默认是60*1000）
+  instance:
+    instance-id: eureka-3003 #此实例注册到eureka服务端的唯一的实例ID
+    hostname: eureka3003.com #eureka服务的路径
+  client:  #eureka客户端配置，当前eureka作为服务端使用的配置
+    #registerWithEureka: false #不把自己作为一个客户端注册到自己身上
+    #fetchRegistry: false  #集群是需要禁用，单机时放开不需要从服务端获取注册信息（因为在这里自己就是服务端，而且已经禁用自己注册了）
+    serviceUrl:
+      defaultZone: http://eureka3001.com:3001/eureka,http://eureka3002.com:3002/eureka
+
+spring:
+  application:
+    name: eureka-server

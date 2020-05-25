@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/microservice-common/microservice-common.iml" filepath="$PROJECT_DIR$/microservice-common/microservice-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-configClient/microservice-configClient.iml" filepath="$PROJECT_DIR$/microservice-configClient/microservice-configClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-configServer/microservice-configServer.iml" filepath="$PROJECT_DIR$/microservice-configServer/microservice-configServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-configServer5601/microservice-configServer5601.iml" filepath="$PROJECT_DIR$/microservice-configServer5601/microservice-configServer5601.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-eurekaServer/microservice-eurekaServer.iml" filepath="$PROJECT_DIR$/microservice-eurekaServer/microservice-eurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-eurekaServer3001/microservice-eurekaServer3001.iml" filepath="$PROJECT_DIR$/microservice-eurekaServer3001/microservice-eurekaServer3001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-eurekaServer3002/microservice-eurekaServer3002.iml" filepath="$PROJECT_DIR$/microservice-eurekaServer3002/microservice-eurekaServer3002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-eurekaServer3003/microservice-eurekaServer3003.iml" filepath="$PROJECT_DIR$/microservice-eurekaServer3003/microservice-eurekaServer3003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-hystrixDashboard/microservice-hystrixDashboard.iml" filepath="$PROJECT_DIR$/microservice-hystrixDashboard/microservice-hystrixDashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-orderService/microservice-orderService.iml" filepath="$PROJECT_DIR$/microservice-orderService/microservice-orderService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-orderService5001/microservice-orderService5001.iml" filepath="$PROJECT_DIR$/microservice-orderService5001/microservice-orderService5001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-parent/microservice-parent.iml" filepath="$PROJECT_DIR$/microservice-parent/microservice-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-payment/microservice-payment.iml" filepath="$PROJECT_DIR$/microservice-payment/microservice-payment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-payment7001/microservice-payment7001.iml" filepath="$PROJECT_DIR$/microservice-payment7001/microservice-payment7001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-userService/microservice-userService.iml" filepath="$PROJECT_DIR$/microservice-userService/microservice-userService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-zipkinServer/microservice-zipkinServer.iml" filepath="$PROJECT_DIR$/microservice-zipkinServer/microservice-zipkinServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-zuul/microservice-zuul.iml" filepath="$PROJECT_DIR$/microservice-zuul/microservice-zuul.iml" />
+    </modules>
+  </component>
+</project>

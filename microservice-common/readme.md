@@ -1,0 +1,2 @@
+microservice-parent是父项目，当前项目下的所有Module都要依赖它。
+它里面配置所有需要的组件的版本号，子Module依赖组件时，不在需要给出版本号。

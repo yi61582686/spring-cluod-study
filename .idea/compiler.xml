@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microservice-configClient" />
+        <module name="microservice-payment7001" />
+        <module name="microservice-eurekaServer" />
+        <module name="microservice-userService" />
+        <module name="microservice-eurekaServer3003" />
+        <module name="microservice-eurekaServer3002" />
+        <module name="microservice-eurekaServer3001" />
+        <module name="microservice-orderService5001" />
+        <module name="microservice-configServer" />
+        <module name="microservice-zipkinServer" />
+        <module name="microservice-orderService" />
+        <module name="microservice-configServer5601" />
+        <module name="microservice-hystrixDashboard" />
+        <module name="microservice-common" />
+        <module name="microservice-zuul" />
+        <module name="microservice-payment" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microservice-common" target="1.8" />
+      <module name="microservice-configClient" target="1.8" />
+      <module name="microservice-configServer" target="1.8" />
+      <module name="microservice-configServer5601" target="1.8" />
+      <module name="microservice-eurekaServer" target="1.8" />
+      <module name="microservice-eurekaServer3001" target="1.8" />
+      <module name="microservice-eurekaServer3002" target="1.8" />
+      <module name="microservice-eurekaServer3003" target="1.8" />
+      <module name="microservice-hystrixDashboard" target="1.8" />
+      <module name="microservice-orderService" target="1.8" />
+      <module name="microservice-orderService5001" target="1.8" />
+      <module name="microservice-parent" target="1.8" />
+      <module name="microservice-payment" target="1.8" />
+      <module name="microservice-payment7001" target="1.8" />
+      <module name="microservice-userService" target="1.8" />
+      <module name="microservice-zipkinServer" target="1.8" />
+      <module name="microservice-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="microservice-common" options="" />
+    </option>
+  </component>
+</project>
